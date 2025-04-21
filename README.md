@@ -30,4 +30,4 @@ npm start
 
 **RUN THEM SIMULTANEOUSLY!!!**
 
-There is SQL file in the repository which you can use for table structure.
+There is SQL file called **react** in the repository which you can use for table structure.

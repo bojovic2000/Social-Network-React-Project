@@ -16,15 +16,18 @@ You will need:
 - MySQL
 - (Optional) Postman or similar tool for API testing
 
-Then:
+Then run two terminals, in one:
+
 cd .\front_end\
 npm install
 npm start
 
-And:
+And in other:
+
 cd .\back_end\
 npm install
 npm start
 
 **RUN THEM SIMULTANEOUSLY!!!**
 
+There is SQL file in the repository which you can use for table structure.

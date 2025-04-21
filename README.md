@@ -13,11 +13,11 @@ Node.js + npm
 MySQL
 (Optional) Postman or equivalent tool for testing APIs
 Then run two terminals, in one:
-cd.\\front_end
+cd.\front_end
 npm install npm start
 
 And in other:
-cd.\\back_end
+cd.\back_end
 npm install
 npm start
 

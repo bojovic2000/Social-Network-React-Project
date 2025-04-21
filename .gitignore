@@ -1,0 +1,19 @@
+# Ignore all node_modules folders
+node_modules/
+front_end/node_modules/
+back_end/node_modules/
+
+# Optional: ignore environment/config
+.env
+.env.local
+*.env
+
+# Ignore logs and OS-specific stuff
+*.log
+.DS_Store
+Thumbs.db
+
+# Ignore builds and coverage
+build/
+dist/
+coverage/

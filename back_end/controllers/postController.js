@@ -1,12 +1,18 @@
 import * as PostModel from '../models/postModel.js';
 
 export const getPosts = async (req, res) => {
+    const page = parseInt(req.query.page) || 1;
+    const limit = parseInt(req.query.limit) || 5;
+    const offset = (page - 1) * limit;
+
     try {
-        const posts = await PostModel.getAllPosts();
+        const posts = await PostModel.getPaginatedPosts(offset, limit);
         res.json(posts);
+        console.log("posts: ", posts.length)
     } catch (error) {
         res.status(500).json({ error: 'Failed to retrieve posts' });
     }
+
 };
 
 export const getFriendsPosts = async (req, res) => {

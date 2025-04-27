@@ -5,6 +5,11 @@ export const getAllPosts = async () => {
     return posts;
 };
 
+export const getPaginatedPosts = async (offset, limit) => {
+    const [rows] = await db.query('SELECT posts.*, users.full_name FROM posts LEFT JOIN users ON posts.user_id = users.id ORDER BY posts.date DESC, posts.time DESC LIMIT ? OFFSET ?', [limit, offset]);
+    return rows;
+};
+
 export const getFriendsPosts = async (id) => {
     console.log("fposts model: ", id)
     const [posts] = await db.query('SELECT DISTINCT posts.id, posts.*, users.full_name FROM posts JOIN connections ON posts.user_id = connections.userone_id OR posts.user_id = connections.usertwo_id JOIN users ON posts.user_id = users.id  WHERE (connections.userone_id = ? OR connections.usertwo_id = ?) AND connections.accepted = "1" AND posts.user_id != ? ORDER BY posts.date DESC, posts.time DESC;', [id, id, id]);
